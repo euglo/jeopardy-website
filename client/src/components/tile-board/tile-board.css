@@ -1,0 +1,11 @@
+ul {
+    list-style: none;
+    padding: 0;
+    width: 30%;
+    margin: auto;
+}
+
+.tb-container {
+    margin: auto;
+    max-width: 1000px;
+}

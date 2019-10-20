@@ -1,9 +1,9 @@
 const request = require('request');
 
-const getClues = (callback) => {
-    const url = 'http://jservice.io/api/clues';
+const url = 'http://jservice.io/api/clues';
 
-    request({url, json: true}, (error, response, body) => {
+const getClues = (offset,  callback) => {
+    request({uri: `${url}?offset=${offset}`, json: true}, (error, response, body) => {
         if (error) {
             callback('Unable to connect to location services.', undefined);
         } else {
@@ -12,6 +12,16 @@ const getClues = (callback) => {
     })
 }
 
+// const getAllClues = (callback) => {
+//     let clues = [];
+//     getClues(0, clues, (error, data) => {
+//         if (error) {
+//             callback(error, undefined);
+//         } else {
+//             callback(undefined, data);
+//         }     
+//     })
+// }
 module.exports = {
     getClues
 }

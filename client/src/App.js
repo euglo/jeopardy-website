@@ -1,26 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import JeopardyTile from './components/jeopardy-tile/jeopardy-tile';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
+import { blue, yellow } from '@material-ui/core/colors/'
+import TileBoard from './components/tile-board/tile-board'
+
+const theme = createMuiTheme({
+  palette: {
+    primary: blue,
+    secondary: yellow
+  }
+});
+//theme = responsiveFontSizes(theme);
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      <JeopardyTile />
-    </div>
+    <MuiThemeProvider theme={theme}>
+      <div className="App" >
+        <TileBoard />
+      </div>
+    </MuiThemeProvider> 
   );
 }
 

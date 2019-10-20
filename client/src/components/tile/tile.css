@@ -1,0 +1,11 @@
+p {
+    font-size: 1.3rem;
+    line-height: 2rem;
+}
+
+.tile {
+    margin: auto;
+    width: 20%;
+    height: 50%;
+    border: 1px solid black;
+}
