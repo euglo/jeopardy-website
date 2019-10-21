@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Tile from '../tile/tile';
-import Grid from '@material-ui/core/Grid'
-import Container from '@material-ui/core/Container'
-//import './tile-board.css';
+import Grid from '@material-ui/core/Grid';
+import Container from '@material-ui/core/Container';
+import './tile-board.css';
 
 class TileBoard extends Component {
     constructor(props) {
@@ -24,13 +24,14 @@ class TileBoard extends Component {
     return (
         <Container maxWidth="lg">
             <h2>Clues</h2>
-            <Grid container direction="row" justify="center" alignItems="center" spacing="3"> 
+            <Grid container direction="row" justify="center" alignItems="center" spacing={3}> 
                 {this.state.clues.map(clue => 
-                    <Grid item xs={12} sm={6} lg={3} xl={2}>
-                        <Tile question={clue.question} answer={clue.answer} color="dark"/>
+                    <Grid key={clue.id} item xs={12} sm={6} lg={3} xl={2}>
+                        <Tile question={clue.question} answer={clue.answer}/>
                     </Grid>
                 )}
             </Grid>
+           
         </Container>
         );
     }

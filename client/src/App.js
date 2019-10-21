@@ -8,7 +8,14 @@ const theme = createMuiTheme({
   palette: {
     primary: blue,
     secondary: yellow
-  }
+  },
+  // overrides: {
+  //   MuiCard: {
+  //     root: {
+  //       background: "blue"
+  //     }
+  //   }
+  // }
 });
 //theme = responsiveFontSizes(theme);
 

@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import Box from '@material-ui/core/Box'
+import Card from '@material-ui/core/Card';
+import blue from '@material-ui/core/colors/blue'
+
+const primary = blue[300];
 
 class Tile extends Component {
     constructor(props) {
@@ -12,9 +15,11 @@ class Tile extends Component {
 
     render() {
         return (
-            <Box>
+            <Card style={{padding:"30px 0"}}>
+                <div>
                 <p>{this.state.answer}</p>
-            </Box>
+                </div> 
+            </Card>
         );
     }
 }
